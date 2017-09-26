@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Your current items:</h1>
+    <% cart.each do |item| %>
+      <%= item %>
+    <% end %>
+
+    <h3>Add an item:</h3>
+    <%= form_tag(products_add_path, method: 'post') do %>
+      <%= text_field_tag('cart[item]','',:id => 'product')%>
+      <%= submit_tag "add to cart" %>
+    <% end %>
+  </body>
+</html>
